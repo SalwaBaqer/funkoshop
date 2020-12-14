@@ -5,7 +5,12 @@ import { observer } from "mobx-react";
 import funkoStore from "../stores/funkoStore";
 
 //styles
-import { ShopDetailTitle, ShopDetailImage, ShopDetailWrapper } from "../styles";
+import {
+  FunkoDetailTitle,
+  FunkoDetailImage,
+  FunkoDetailWrapper,
+  FunkoDetailDescription,
+} from "../styles";
 
 //native-base
 import { Spinner } from "native-base";
@@ -15,11 +20,15 @@ const FunkoDetail = ({ route }) => {
   const { funko } = route.params;
 
   return (
-    <ShopDetailWrapper>
-      <ShopDetailImage source={{ uri: funko.image }} />
-      <ShopDetailTitle>{funko.name}</ShopDetailTitle>
-      <ShopDetailTitle>{funko.price}</ShopDetailTitle>
-    </ShopDetailWrapper>
+    <FunkoDetailWrapper>
+      <FunkoDetailTitle>{funko.name}</FunkoDetailTitle>
+      <FunkoDetailImage source={{ uri: funko.image }} />
+
+      <FunkoDetailDescription>price: {funko.price}</FunkoDetailDescription>
+      <FunkoDetailDescription>
+        description: {funko.description}
+      </FunkoDetailDescription>
+    </FunkoDetailWrapper>
   );
 };
 

@@ -53,3 +53,25 @@ export const ShopDetailTitle = styled.Text`
   font-weight: bold;
   font-size: 40;
 `;
+
+export const FunkoDetailWrapper = styled.View`
+  margin-top: 20;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const FunkoDetailImage = styled.Image`
+  width: 60%;
+  height: 60%;
+`;
+
+export const FunkoDetailTitle = styled.Text`
+  font-weight: bold;
+  font-size: 30;
+  color: ${(props) => props.theme.mainColor};
+`;
+
+export const FunkoDetailDescription = styled.Text`
+  font-size: 25;
+  color: ${(props) => props.theme.mainColor};
+`;
