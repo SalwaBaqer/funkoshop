@@ -14,7 +14,7 @@ import { Spinner } from "native-base";
 //components
 import FunkoList from "./FunkoList";
 
-const ShopDetail = ({ route }) => {
+const ShopDetail = ({ route, navigation }) => {
   if (shopStore.loading) return <Spinner />;
   const { shop } = route.params;
 
@@ -26,7 +26,7 @@ const ShopDetail = ({ route }) => {
     <ShopDetailWrapper>
       <ShopDetailImage source={{ uri: shop.image }} />
       <ShopDetailTitle>{shop.name}</ShopDetailTitle>
-      <FunkoList funkos={funkosFromFunkoStore} />
+      <FunkoList funkos={funkosFromFunkoStore} navigation={navigation} />
     </ShopDetailWrapper>
   );
 };

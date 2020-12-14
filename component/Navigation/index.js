@@ -4,6 +4,7 @@ import React from "react";
 import Home from "../Home";
 import ShopList from "../ShopList";
 import ShopDetail from "../ShopDetail";
+import FunkoDetail from "../FunkoDetail";
 
 //Navigation
 
@@ -23,6 +24,7 @@ const RootNavigator = () => {
         headerTitleStyle: {
           fontWeight: "bold",
         },
+        cardStyle: { backgroundColor: "#d6f2ff" },
       }}
     >
       <Screen name="Home" component={Home} options={{ headerShown: false }} />
@@ -38,6 +40,16 @@ const RootNavigator = () => {
           const { shop } = route.params;
           return {
             title: shop.name,
+          };
+        }}
+      />
+      <Screen
+        name="FunkoDetail"
+        component={FunkoDetail}
+        options={({ route }) => {
+          const { funko } = route.params;
+          return {
+            title: funko.name,
           };
         }}
       />
