@@ -109,3 +109,7 @@ export const AddToCartButtonStyled = styled(Icon)`
   height: 20%;
   text-align: center;
 `;
+
+export const TextStyle = styled.Text`
+  font-size: 15px;
+`;

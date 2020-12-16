@@ -5,7 +5,7 @@ import { useState } from "react";
 import { ShopItemStyled, AddToCartButtonStyled } from "../styles";
 
 //native
-import { ListItem, Left, Right, Button } from "native-base";
+import { ListItem, Left, Right } from "native-base";
 import { Image, Text } from "react-native";
 
 //NumericInput

@@ -10,9 +10,10 @@ import funkoStore from "../stores/funkoStore";
 import cartStore from "../stores/cartStore";
 
 //list
-import { List, Spinner } from "native-base";
+import { Left, List, Right, Spinner, Text } from "native-base";
 
 const CartList = () => {
+  let totalprice = 0;
   if (funkoStore.loading) return <Spinner />;
 
   const cartList = cartStore.items

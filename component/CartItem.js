@@ -4,7 +4,7 @@ import React from "react";
 import { TotalPrice } from "../styles";
 
 //native
-import { ListItem, Body } from "native-base";
+import { ListItem, Body, Left, Right } from "native-base";
 import { Image, Text } from "react-native";
 
 //observer
@@ -13,7 +13,7 @@ import { observer } from "mobx-react";
 const CartItem = ({ item }) => {
   return (
     <ListItem>
-      <Body>
+      <Left>
         <Image
           style={{ width: 100, height: 100 }}
           source={{ uri: item.image }}
@@ -22,8 +22,11 @@ const CartItem = ({ item }) => {
         <Text note>
           {item.price} KD x {item.quantity}
         </Text>
+      </Left>
+
+      <Right>
         <TotalPrice>{item.price * item.quantity} KD</TotalPrice>
-      </Body>
+      </Right>
     </ListItem>
   );
 };

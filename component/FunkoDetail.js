@@ -24,10 +24,8 @@ const FunkoDetail = ({ route }) => {
       <FunkoDetailTitle>{funko.name}</FunkoDetailTitle>
       <FunkoDetailImage source={{ uri: funko.image }} />
 
-      <FunkoDetailDescription>price: {funko.price}</FunkoDetailDescription>
-      <FunkoDetailDescription>
-        description: {funko.description}
-      </FunkoDetailDescription>
+      <FunkoDetailDescription> {funko.price}</FunkoDetailDescription>
+      <FunkoDetailDescription>{funko.description}</FunkoDetailDescription>
     </FunkoDetailWrapper>
   );
 };
