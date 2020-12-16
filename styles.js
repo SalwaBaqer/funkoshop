@@ -117,3 +117,17 @@ export const TextStyle = styled.Text`
 export const TrashIcon = styled(Icon)`
   color: red;
 `;
+
+export const CheckoutButton = styled.TouchableOpacity`
+  align-self: stretch;
+  align-items: center;
+  padding: 20px;
+  background-color: ${(props) => props.theme.mainColor};
+  margin-top: 30px;
+`;
+
+export const CheckoutButtonText = styled.Text`
+  color: #fcfdff;
+  font-weight: bold;
+  font-size: 18px;
+`;

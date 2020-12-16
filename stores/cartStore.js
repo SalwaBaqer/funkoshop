@@ -36,6 +36,12 @@ class CartStore {
     await AsyncStorage.setItem("myCart", JSON.stringify(this.items));
   };
 
+  //checkout
+  checkout = async () => {
+    this.items = [];
+    await AsyncStorage.removeItem("myCart");
+  };
+
   //total quantity
   get totalQuantity() {
     let total = 0;

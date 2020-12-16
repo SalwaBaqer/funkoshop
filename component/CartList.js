@@ -12,10 +12,13 @@ import cartStore from "../stores/cartStore";
 //list
 import { Left, List, Right, Spinner, Text } from "native-base";
 
+//styles
+import { CheckoutButton, CheckoutButtonText } from "../styles";
+
 const CartList = () => {
-  let totalprice = 0;
   if (funkoStore.loading) return <Spinner />;
 
+  //cartList
   const cartList = cartStore.items
     .map((item) => ({
       ...funkoStore.getFunkosById(item.funkoId),
@@ -23,7 +26,20 @@ const CartList = () => {
     }))
     .map((item) => <CartItem item={item} key={item.name} />);
 
-  return <List>{cartList}</List>;
+  //handle checkout
+  const handleCheckOut = () => {
+    cartStore.checkout();
+    alert("Thank you!");
+  };
+
+  return (
+    <>
+      <List>{cartList}</List>
+      <CheckoutButton onPress={handleCheckOut}>
+        <CheckoutButtonText>Checkout</CheckoutButtonText>
+      </CheckoutButton>
+    </>
+  );
 };
 
 export default observer(CartList);

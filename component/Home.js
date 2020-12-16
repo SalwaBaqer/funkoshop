@@ -33,7 +33,7 @@ const Home = ({ navigation }) => {
         </TopStyling>
 
         <BottomStyling>
-          <ButtonStyled>Click here to skip</ButtonStyled>
+          <ButtonStyled>Click anywhere to skip</ButtonStyled>
         </BottomStyling>
       </TouchableOpacity>
     </HomeBackground>
