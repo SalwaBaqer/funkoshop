@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Image, TouchableOpacity } from "react-native";
+
 //styled
 import {
   HomeBackground,
@@ -11,6 +13,7 @@ import {
 
 const Home = ({ navigation }) => {
   return (
+    // <TouchableOpacity onPress={() => alert("hello")}>
     <HomeBackground
       source={{
         uri:
@@ -18,7 +21,13 @@ const Home = ({ navigation }) => {
       }}
     >
       <TopStyling>
-        <Title>Funko shop</Title>
+        <Image
+          style={{ width: "65%", height: "30%" }}
+          source={{
+            uri:
+              "https://cdn.shopify.com/s/files/1/0433/1952/5529/files/Funko_Logo_White.png?v=1602310645",
+          }}
+        />
       </TopStyling>
 
       <BottomStyling>
@@ -27,6 +36,7 @@ const Home = ({ navigation }) => {
         </ButtonStyled>
       </BottomStyling>
     </HomeBackground>
+    /* </TouchableOpacity> */
   );
 };
 

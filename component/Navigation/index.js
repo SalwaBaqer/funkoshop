@@ -5,6 +5,8 @@ import Home from "../Home";
 import ShopList from "../ShopList";
 import ShopDetail from "../ShopDetail";
 import FunkoDetail from "../FunkoDetail";
+import CartList from "../CartList";
+import CartButton from "../Buttons/CartButton";
 
 //Navigation
 
@@ -31,7 +33,7 @@ const RootNavigator = () => {
       <Screen
         name="Shops"
         component={ShopList}
-        options={{ title: "Choose a Shop" }}
+        options={{ title: "Choose a Shop", headerRight: () => <CartButton /> }}
       />
       <Screen
         name="Funkos"
@@ -40,6 +42,7 @@ const RootNavigator = () => {
           const { shop } = route.params;
           return {
             title: shop.name,
+            headerRight: () => <CartButton />,
           };
         }}
       />
@@ -50,9 +53,11 @@ const RootNavigator = () => {
           const { funko } = route.params;
           return {
             title: funko.name,
+            headerRight: () => <CartButton />,
           };
         }}
       />
+      <Screen name="Cart" component={CartList} />
     </Navigator>
   );
 };
