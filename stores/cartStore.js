@@ -30,6 +30,12 @@ class CartStore {
     await AsyncStorage.setItem("myCart", JSON.stringify(this.items));
   };
 
+  //remove
+  removeItemFromCart = async (itemId) => {
+    this.items = this.items.filter((item) => item.funkoId !== itemId);
+    await AsyncStorage.setItem("myCart", JSON.stringify(this.items));
+  };
+
   //total quantity
   get totalQuantity() {
     let total = 0;

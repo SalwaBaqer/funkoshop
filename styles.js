@@ -1,6 +1,6 @@
 import styled from "styled-components/native";
 
-import { Icon, Button, Text } from "native-base";
+import { Icon, Text } from "native-base";
 
 export const HomeBackground = styled.ImageBackground`
   flex: 1;
@@ -112,4 +112,8 @@ export const AddToCartButtonStyled = styled(Icon)`
 
 export const TextStyle = styled.Text`
   font-size: 15px;
+`;
+
+export const TrashIcon = styled(Icon)`
+  color: red;
 `;
