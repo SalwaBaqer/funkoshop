@@ -7,9 +7,10 @@ import ShopDetail from "../ShopDetail";
 import FunkoDetail from "../FunkoDetail";
 import CartList from "../CartList";
 import CartButton from "../Buttons/CartButton";
+import Signin from "../Authentication/Signin";
+import Signup from "../Authentication/Signup";
 
 //Navigation
-
 import { createStackNavigator } from "@react-navigation/stack";
 
 const { Navigator, Screen } = createStackNavigator();
@@ -30,6 +31,18 @@ const RootNavigator = () => {
       }}
     >
       <Screen name="Home" component={Home} options={{ headerShown: false }} />
+
+      <Screen
+        name="Signin"
+        component={Signin}
+        options={{ headerShown: false }}
+      />
+
+      <Screen
+        name="Signup"
+        component={Signup}
+        options={{ headerShown: false }}
+      />
       <Screen
         name="Shops"
         component={ShopList}

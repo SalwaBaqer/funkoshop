@@ -3,9 +3,6 @@ import { makeAutoObservable } from "mobx";
 //storage
 import AsyncStorage from "@react-native-community/async-storage";
 
-//stores
-import funkoStore from "./funkoStore";
-
 class CartStore {
   items = [];
 
