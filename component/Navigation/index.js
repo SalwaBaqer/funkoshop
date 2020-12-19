@@ -1,15 +1,16 @@
-import React from "react";
-
+import CartButton from "../Buttons/CartButton";
+import CartList from "../CartList";
+import FunkoDetail from "../FunkoDetail";
 //component
 import Home from "../Home";
-import ShopList from "../ShopList";
+import React from "react";
 import ShopDetail from "../ShopDetail";
-import FunkoDetail from "../FunkoDetail";
-import CartList from "../CartList";
-import CartButton from "../Buttons/CartButton";
+import ShopList from "../ShopList";
 import Signin from "../Authentication/Signin";
+import SignoutButton from "../Buttons/SignoutButton";
 import Signup from "../Authentication/Signup";
-
+import { Text } from "react-native";
+import authStore from "../../stores/authStore";
 //Navigation
 import { createStackNavigator } from "@react-navigation/stack";
 
@@ -46,7 +47,13 @@ const RootNavigator = () => {
       <Screen
         name="Shops"
         component={ShopList}
-        options={{ title: "Choose a Shop", headerRight: () => <CartButton /> }}
+        options={{
+          title: "Choose a Shop",
+          headerRight: () => <CartButton />,
+          headerLeft: () => {
+            return authStore.user && <SignoutButton />;
+          },
+        }}
       />
       <Screen
         name="Funkos"

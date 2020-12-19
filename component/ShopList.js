@@ -1,18 +1,12 @@
-import React from "react";
-
-import { observer } from "mobx-react";
-
-// Style
-import { Title } from "../styles";
-
-//Components
-import ShopItem from "./ShopItem";
-
-//store
-import shopStore from "../stores/shopStore";
-
 //list
 import { List, Spinner } from "native-base";
+
+import React from "react";
+//Components
+import ShopItem from "./ShopItem";
+import { observer } from "mobx-react";
+//store
+import shopStore from "../stores/shopStore";
 
 const ShopList = ({ navigation }) => {
   if (shopStore.loading) return <Spinner />;

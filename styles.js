@@ -1,6 +1,6 @@
-import styled from "styled-components/native";
-
 import { Icon, Text } from "native-base";
+
+import styled from "styled-components/native";
 
 export const HomeBackground = styled.ImageBackground`
   flex: 1;
@@ -36,6 +36,7 @@ export const ButtonStyled = styled.Text`
 
 export const ShopItemStyled = styled.Text`
   color: ${(props) => props.theme.blue};
+  font-weight: bold;
   font-size: 18;
   margin-top: 10;
   margin-bottom: 10;
@@ -153,8 +154,9 @@ export const AuthTextInput = styled.TextInput`
   align-self: stretch;
   text-align: left;
   height: 40px;
+  width: 90%;
   margin-bottom: 30px;
-  color: ${(props) => props.theme.mainColor};
+  color: ${(props) => props.theme.blue};
   border-bottom-color: ${(props) => props.theme.mainColor};
   border-bottom-width: 1px;
 `;
@@ -177,3 +179,19 @@ export const AuthOther = styled.Text`
   color: ${(props) => props.theme.mainColor};
   margin-top: 15px;
 `;
+
+export const SignoutButtonStyled = styled(Icon)`
+  color: red;
+`;
+
+//***********Show & Hide Password***********
+export const Iconstyled = styled(Icon)`
+  color: ${(props) => props.theme.mainColor};
+`;
+
+export const ViewPasswordContainer = styled.View`
+  display: flex;
+  flex-direction: row;
+  align-self: stretch;
+`;
+//********************************************

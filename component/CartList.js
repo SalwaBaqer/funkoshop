@@ -1,21 +1,19 @@
-import React from "react";
-
-import { observer } from "mobx-react";
-
-//Components
-import CartItem from "./CartItem";
-
-//store
-import funkoStore from "../stores/funkoStore";
-import cartStore from "../stores/cartStore";
-
+//styles
+import { CheckoutButton, CheckoutButtonText } from "../styles";
 //list
 import { Left, List, Right, Spinner, Text } from "native-base";
 
-//styles
-import { CheckoutButton, CheckoutButtonText } from "../styles";
+//Components
+import CartItem from "./CartItem";
+import React from "react";
+import SignoutButton from "./Buttons/SignoutButton";
+//store
+import authStore from "../stores/authStore";
+import cartStore from "../stores/cartStore";
+import funkoStore from "../stores/funkoStore";
+import { observer } from "mobx-react";
 
-const CartList = () => {
+const CartList = ({ navigation }) => {
   if (funkoStore.loading) return <Spinner />;
 
   //cartList
@@ -27,7 +25,7 @@ const CartList = () => {
     .map((item) => <CartItem item={item} key={item.name} />);
 
   //handle checkout
-  const handleCheckOut = () => {
+  const handleCheckOut = async () => {
     cartStore.checkout();
     alert("Thank you!");
   };
